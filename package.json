@@ -1,0 +1,25 @@
+{
+  "name": "Firebase-Distribution-Github-Action",
+  "version": "1.0.0",
+  "description": "Firebase Distribution Github Action",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darius-sv/Firebase-Distribution-Github-Action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darius-sv/Firebase-Distribution-Github-Action/issues"
+  },
+  "homepage": "https://github.com/darius-sv/Firebase-Distribution-Github-Action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0",
+    "firebase-tools": "^9.4.0"
+  }
+}
