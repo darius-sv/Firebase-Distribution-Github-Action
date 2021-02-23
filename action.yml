@@ -18,5 +18,5 @@ inputs:
     description: 'Release notes visible on release page'
     required: false
 runs:
-  using: 'node15'
+  using: 'node12'
   main: 'index.js'
