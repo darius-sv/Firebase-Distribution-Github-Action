@@ -6,16 +6,16 @@ const serviceAccountFile = '/tmp/service-account-key.json';
 
 async function main() {
     try {
-        fs.writeFile(serviceAccountFile, core.getInput('serviceCredentials'));
+        fs.writeFileSync(serviceAccountFile, core.getInput('serviceCredentials'));
         process.env.GOOGLE_APPLICATION_CREDENTIALS = serviceAccountFile;
 
         const releaseNotes = core.getInput('releaseNotes') ||
                              spawnSync('git', ['log', '-1', '--pretty=short']).output.join('').toString();
 
         await firebase.appdistribution.distribute(core.getInput('file'), {
-            app: core.getInput('appId'), //'1:729594068203:ios:7486b1866af069d9',
+            app: core.getInput('appId'),
             releaseNotes: releaseNotes,
-            groups: core.getInput('groups'), // 'ios-softvision'
+            groups: core.getInput('groups'),
         });
     } catch (e) {
         core.setFailed(e.message);
